@@ -90,7 +90,10 @@ namespace CollisionGame
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            if(logic.isDead)
+            {
+                GraphicsDevice.Clear(Color.Red);
+            }
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
@@ -98,7 +101,7 @@ namespace CollisionGame
             spriteBatch.Begin();          
             for(int x = 0; x<logic.all.Count;x++)
             {
-                Rectangle rc = new Rectangle((int)logic.all[x].x, (int)logic.all[x].y, 100, 100);
+                Rectangle rc = new Rectangle((int)logic.all[x].x - 10, (int)logic.all[x].y - 10, 20, 20);
                 spriteBatch.Draw(m_crapFace, rc, Color.White);
             }
             spriteBatch.End();
