@@ -5,5 +5,7 @@
   <Config />
   <SourceFiles>
     <File>C:/Users/ErikaB/source/repos/CollisionGame/CollisionGame/Content/crapface.png</File>
+    <File>C:/Users/ErikaB/source/repos/CollisionGame/CollisionGame/Content/playerface.png</File>
+    <File>C:/Users/ErikaB/source/repos/CollisionGame/CollisionGame/Content/fireball.png</File>
   </SourceFiles>
 </SourceFileCollection>

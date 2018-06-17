@@ -24,3 +24,5 @@ C:\Users\ErikaB\source\repos\CollisionGame\CollisionGame\obj\x86\Debug\Collision
 C:\Users\ErikaB\source\repos\CollisionGame\CollisionGame\obj\x86\Debug\CollisionGame.csproj.CopyComplete
 C:\Users\ErikaB\source\repos\CollisionGame\CollisionGame\obj\x86\Debug\CollisionGame.exe
 C:\Users\ErikaB\source\repos\CollisionGame\CollisionGame\obj\x86\Debug\CollisionGame.pdb
+C:\Users\ErikaB\source\repos\CollisionGame\CollisionGame\bin\Windows\x86\Debug\Content\fireball.xnb
+C:\Users\ErikaB\source\repos\CollisionGame\CollisionGame\bin\Windows\x86\Debug\Content\playerface.xnb

@@ -12,6 +12,8 @@ namespace CollisionGame
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Texture2D m_crapFace;
+        Texture2D player_face;
+        Texture2D fire_ball;
         GameLogic logic;
        
         public Game1()
@@ -50,6 +52,8 @@ namespace CollisionGame
             
             // TODO: use this.Content to load your game content here
             m_crapFace = this.Content.Load<Texture2D>("Crapface");
+            player_face = this.Content.Load<Texture2D>("PlayerFace");
+            fire_ball = this.Content.Load<Texture2D>("FireBall");
         }
 
         /// <summary>
@@ -80,7 +84,8 @@ namespace CollisionGame
 
             base.Update(gameTime);
             float dt = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000;
-            logic.tick(dt);
+            float t = (float)gameTime.TotalGameTime.TotalMilliseconds / 1000;
+            logic.tick(t, dt);
         }
 
         /// <summary>
@@ -101,8 +106,22 @@ namespace CollisionGame
             spriteBatch.Begin();          
             for(int x = 0; x<logic.all.Count;x++)
             {
-                Rectangle rc = new Rectangle((int)logic.all[x].x - 10, (int)logic.all[x].y - 10, 20, 20);
-                spriteBatch.Draw(m_crapFace, rc, Color.White);
+                GameObject go = logic.all[x];
+                Rectangle rc = new Rectangle((int)go.x - 10, (int)go.y - 10, 20, 20);
+
+                SpriteToDraw whichSprite = go.GetSprite();
+                switch(whichSprite)
+                {
+                    case SpriteToDraw.CrapFace:
+                        spriteBatch.Draw(m_crapFace, rc, Color.White);
+                        break;
+                    case SpriteToDraw.Player:
+                        spriteBatch.Draw(player_face, rc, Color.White);
+                        break;
+                    case SpriteToDraw.Fireball:
+                        spriteBatch.Draw(fire_ball, rc, Color.White);
+                        break;
+                }
             }
             spriteBatch.End();
         }
